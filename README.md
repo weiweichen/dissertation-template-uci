@@ -1,4 +1,4 @@
-dissertation-uci
+dissertation-template-uci
 ================
 
 My UC Irvine Ph.D. dissertation latex source code
