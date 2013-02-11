@@ -1,0 +1,87 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	dissertation.tex 
+% 	Ph.D. Dissertation
+% 	Author: Weiwei Chen
+%      Last update: 
+% 	Initial version: 02/10/13
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[twoside]{scrbook}
+
+\usepackage[top=1in,bottom=2.54cm,left=2.54cm,right=2.54cm,asymmetric]{geometry}
+
+%\usepackage[subfigure]{MACROS/cadlab}
+
+% include definitions for SpecC
+%\usepackage[subfigure]{MACROS/specclisting}
+
+% enable index generation
+\makeindex
+\usepackage{makeidx}
+
+% format URLs
+\usepackage{url}
+\urlstyle{sf}
+
+% my personal macros
+% ....
+\usepackage{acronym}
+\usepackage{afterpage}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+
+%%center the page number
+\usepackage{scrpage2}
+\ifoot[]{}
+\cfoot[\pagemark]{\pagemark}
+\ofoot[]
+
+\pagestyle{scrplain}
+
+
+
+%% new definitions
+% added by Weiwei Chen for her dissertation 01/23/13
+% title of the report
+\def\TitleDef#1{\def\titleRef{#1}}
+
+% author(s) of the report
+\def\AuthorDef#1{\def\authorRef{#1}}
+
+% email(s) of the authors
+\def\EmailDef#1{\def\emailRef{#1}}
+
+% report number ref
+\def\reportDef#1{\def\reportRef{#1}}
+
+
+
+
+
+
+%% begin document
+
+\begin{document}
+
+% --- body of the document ---
+% input whatever file makes the content
+\input{preliminary}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{introduction}
+%\input{experiment}
+%\input{conclusion}
+
+\nocite{book:SpecC:yellow}
+\bibliographystyle{plain}
+\bibliography{references}
+
+
+\end{document}
+
+
+% EOF dissertation.tex

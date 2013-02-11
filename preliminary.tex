@@ -1,0 +1,313 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	preliminary.tex
+% 	Ph.D. Dissertation
+% 	Author: Weiwei Chen
+%      Last update: 
+% 	Initial version: 02/10/13
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% new commands
+
+\newcommand{\thesistitle}[1]{\newcommand\Thesistitle{#1}}
+\newcommand{\degreename}[1]{\newcommand\Degreename{#1}}
+\newcommand{\degreefield}[1]{\newcommand\Degreefield{#1}}
+\newcommand{\authorname}[1]{\newcommand\Authorname{#1}}
+\newcommand{\degreeyear}[1]{\newcommand\Degreeyear{#1}}
+\newcommand{\committeechair}[1]{\newcommand\Committeechair{#1}}
+\newcommand{\othercommitteemembers}[1]{\newcommand\Othercommitteemembers{#1}}
+\newcommand{\copyrightdeclaration}[1]{\newcommand\Copyrightdeclaration{#1}}
+\newcommand{\prepublishedcopyrightdeclaration}[1]{\newcommand\Prepublishedcopyrightdeclaration{#1}}
+\newcommand{\dedications}[1]{\newcommand\Dedications{#1}}
+\newcommand{\acknowledgments}[1]{\newcommand\Acknowledgments{#1}}
+\newcommand{\curriculumvitae}[1]{\newcommand\Curriculumvitae{#1}}
+\newcommand{\thesisabstract}[1]{\newcommand\Thesisbstract{#1}}
+
+\newcommand{\thesistitlepage}
+{
+	\vspace*{0.4in}
+	\thispagestyle{empty}
+	\singlespacing
+	\begin{center}
+		UNIVERSITY OF CALIFORNIA, \\
+		IRVINE \\
+		\vspace{0.4in}
+		{\Thesistitle} \\
+		\vspace{0.4in}
+		DISSERTATION \\
+		\vspace{0.4in}
+		submitted in partial satisfaction of the requirements \\
+		for the degree of \\
+		\vspace{0.4in}
+		\MakeUppercase\Degreename \\
+		\vspace{0.15in}
+		in \Degreefield \\
+		\vspace{0.3in}
+		by \\
+		\vspace{0.3in}
+		\Authorname \\
+	\end{center}
+	\vspace{0.8in}
+	\begin{flushright}
+		Dissertation Committee: \\
+		\Committeechair, Chair \\
+		\Othercommitteemembers \\
+	\end{flushright}
+	\vfill
+	\begin{center}
+		\Degreeyear
+	\end{center}
+	\clearpage
+}
+
+\newcommand{\copyrightpage}
+{
+	\thispagestyle{empty}
+	\rule{0in}{0in}
+	\protect\vfill
+	\begin{center}
+		\Copyrightdeclaration
+	\end{center}
+	\clearpage
+}
+
+\newcommand{\prepublishedcopyrightpage}
+{
+	\thispagestyle{empty}
+	\rule{0in}{0in}
+	\protect\vfill
+	\begin{center}
+		\Prepublishedcopyrightdeclaration
+	\end{center}
+	\clearpage
+}
+
+\newcommand{\signaturepage}
+{
+	\vspace*{1in}
+	\begin{center}
+		The dissertation of \Authorname \\
+		is approved and is acceptable in quality and form for \\
+		publication on microfilm and in digital formats: \\
+	\end{center}
+	\vspace{3in}
+	\begin{flushright}
+	\rule{3in}{0.01in} \\
+	\vspace{0.4in}
+	\rule{3in}{0.01in} \\
+	\vspace{0.4in}
+	\rule{3in}{0.01in} \\
+	Committee Chair
+	\end{flushright}
+	\vspace{.75in}
+	\begin{center}
+	University of California, Irvine \\
+	\Degreeyear
+	\end{center}
+	\clearpage
+}
+
+\newcommand{\dedicationpage}
+{
+	\begin{center}
+		\textbf{\Large DEDICATION} \\
+		\vspace{0.4in}
+		\Dedications
+	\end{center}
+	\clearpage
+}
+
+\newcommand{\acknowledgmentspage}
+{
+	\begin{center}
+		\textbf{\Large ACKNOWLEDGMENTS}
+	\end{center}
+	\parskip 12pt
+	\parindent 0pt
+	\Acknowledgments
+	\clearpage
+}
+
+\newcommand{\curriculumvitaepage}
+{
+	\begin{center}
+		\textbf{\Large CURRICULUM VITAE} \\
+		\vspace{0.4in}
+		\textbf{\large{\Authorname}}
+	\end{center}
+	\Curriculumvitae
+	\clearpage
+}
+
+\newcommand{\abstractpage}
+{
+	\begin{center}
+		{\bf\Large ABSTRACT OF THE DISSERTATION} \\
+		\vspace{0.2in}
+		\Thesistitle \\
+		\vspace{0.2in}
+		By \\
+		\vspace{0.2in}
+		\Authorname \\
+		\vspace{0.2in}
+		\Degreename\ in \Degreefield \\
+		\vspace{0.2in}
+		University of California, Irvine, \Degreeyear \\
+		\vspace{0.2in}
+		\Committeechair, Chair \\
+	\end{center}
+	\vspace{0.2in}
+	\doublespacing
+	\Thesisbstract
+	\clearpage
+}
+
+\renewcommand{\contentsname}{\protect\centering\protect\Large TABLE OF CONTENTS}
+\renewcommand{\listfigurename}{\protect\centering\protect\Large LIST OF FIGURES}
+\renewcommand{\listtablename}{\protect\centering\protect\Large LIST OF TABLES}
+
+% Add "Page" as column title to Table of Contents, List of Figures, and List of Tables
+\addtocontents{toc}{\protect\raggedleft Page\\}
+\addtocontents{lof}{\protect\raggedleft Page\\}
+\addtocontents{lot}{\protect\raggedleft Page\\}
+
+\newcommand{\preliminarypages}
+{
+	\pagenumbering{roman}
+	\thesistitlepage
+	\copyrightpage
+    \ifx\Prepublishedcopyrightdeclaration\undefined
+	\else
+	\prepublishedcopyrightpage
+    \fi
+	\setcounter{page}{2}
+	\signaturepage
+    \ifx\Dedications\undefined
+	\else
+	\dedicationpage
+	\fi
+	
+
+	\tableofcontents
+	\clearpage
+	\phantomsection
+%%%%%%% TBD %%%%%%%%%%%%%s
+	\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+	\listoffigures
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{LIST OF TABLES}
+	\listoftables
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{ACKNOWLEDGMENTS}
+	\acknowledgmentspage
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{CURRICULUM VITAE}
+	\curriculumvitaepage
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{ABSTRACT OF THE DISSERTATION}
+%%%%%%% end of TBD %%%%%%%%%%
+	\abstractpage
+	\pagenumbering{arabic}
+}
+
+\renewcommand{\appendix}
+{
+	\par
+	\setcounter{section}{0}
+	\gdef\thechapter{\@Alph\c@section}
+	\gdef\thesection{\@Alph\c@section}
+	\chapter*{Appendices}
+	\addcontentsline{toc}{chapter}{Appendices}
+}
+
+
+\TitleDef{Out-of-order Parallel Discrete Event Simulation \\ 
+\vspace{0.2in}
+for Electronic System-Level Design}
+\reportDef{Ph.D. Dissertation}
+\AuthorDef{Weiwei Chen}
+\EmailDef{weiwei.chen@uci.edu}
+
+
+
+\thesistitle{
+       \Large\bf
+       \titleRef
+    %   Out-of-order Parallel Discrete Event Simulation for Electronic System-Level Design
+}
+
+
+\degreename{Doctor of Philosophy}
+
+% Use the wording given in the official list of degrees awarded by UCI:
+% http://www.rgs.uci.edu/grad/academic/degrees_offered.htm
+\degreefield{Electrical Engineering and Computer Science}
+
+% Your name as it appears on official UCI records.
+\authorname{Weiwei~Chen}
+
+% Use the full name of each committee member.
+\committeechair{Professor Rainer~D\"{o}mer}
+\othercommitteemembers
+{
+	Professor First Last\\
+	Professor First Last
+}
+
+\degreeyear{2013}
+
+\copyrightdeclaration
+{
+	{\copyright} {\Degreeyear} \Authorname
+}
+
+% If you have previously published parts of your manuscript, you must list the
+% copyright holders; see Section 3.2 of the UCI Thesis and Dissertation Manual.
+% Otherwise, this section may be omitted.
+% \prepublishedcopyrightdeclaration
+% {
+% 	Chapter 4 {\copyright} 2003 Springer-Verlag \\
+% 	Portion of Chapter 5 {\copyright} 1999 John Wiley \& Sons, Inc. \\
+% 	All other materials {\copyright} {\Degreeyear} \Authorname
+% }
+
+% The dedication page is optional.
+\dedications
+{
+	To my parents...
+}
+
+\acknowledgments
+{
+	I would like to thank...
+
+	You must acknowledge grants and other funding assistance. 
+
+	You may also acknowledge the contributions of professors and friends. 
+	
+	You also need to acknowledge any publishers of your previous work who have given you permission to incorporate that work into your dissertation. See Section 3.2 of the UCI Thesis and Dissertation Manual.
+}
+
+% Include, at minimum, a listing of your degrees and educational achievements with dates and the school where the degrees were earned. Also include the degree currently being attained.
+\curriculumvitae
+{
+
+
+
+}
+
+\thesisabstract
+{
+	The text of the abstract begins here. The text may contain a maximum of 350 words. Include a short statement of the 
+problem you studied, a brief exposition of the methods and procedures employed in gathering the data, and a summary of your 
+findings. No graphs, charts, or tables may be included.
+}
+
+
+
+
+\preliminarypages
+% EOF preliminary.text
