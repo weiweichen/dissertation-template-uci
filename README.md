@@ -12,7 +12,7 @@ This template has only been tested on Mac OSX 10.7.5
 
 To compile the source code:
 
-1. In Terminal
+## In Terminal
 
 Open terminal via Go->Utilities->Terminal
 
@@ -21,6 +21,6 @@ Goto the top level of the source code folder
 %make
 
 
-2. In TexShop
+## In TexShop
 
 Open dissertation.tex
